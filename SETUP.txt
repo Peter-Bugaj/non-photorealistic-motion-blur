@@ -1,0 +1,76 @@
+This project requires a java compiler and has a GUI interface that can be best executed
+running eclipse (www.eclipse.org/).
+
+1.  Downloading required libraries:
+
+    Download gluegen-[version-x].dll, gluegen-[version-x].jar, jogl-[version-x].dll and
+    jogl-[version-x].jar (for Windows) to allow the open GL libraries to run in Java.
+    
+    See setup for JOGL for more info:
+    (http://jogamp.org/wiki/index.php/Downloading_and_installing_JOGL)
+
+
+    Download the common-codex.jar file from (http://commons.apache.org/proper/commons-codec/download_codec.cgi)
+
+    Add the downloaded libraries to the non-photorealistic-motion-blur/lib folder of your
+    installation directory.
+    Also, once setup on eclipse, include these files in your classpath during the execution process.
+    
+    
+    NOTE: The above libraries work for Windows. Operating systems may differ.
+    Once again, see (http://jogamp.org/wiki/index.php/Downloading_and_installing_JOGL) for
+    properly installing JOGL on your computer.
+
+
+
+2.  Downloaded the data for 3D meshes:
+
+    Download the mesh data from (http://people.csail.mit.edu/sumner/research/deftransfer/data.html)
+    and add it to your non-photorealistic-motion-blur/model folder of your installation directory.
+    
+    The data files should have the following organized directory structure:
+	
+	horse-poses     | Horse poses from Figure 1.
+	horse-gallop    | Horse gallop animation from the video.
+	horse-collapse  | Horse collapse animation from Figure 6 and the video.
+	camel-poses     | Camel poses from Figure 1.
+	camel-gallop    | Camel gallop animation from the video.
+	camel-collapse  | Camel collapse animation from Figure 6 and the video.
+	cat-poses       | Cat poses from Figure 5.
+	lion-poses      | Lion poses from Figure 5.
+	face-poses      | Face mask expressions from Figure 7.
+	head-poses      | Head expressions from Figure 7.
+	flamingo-poses  | Flamingo poses from Figure 8.
+	elephant-poses  | Elephant poses shown at SIGGRAPH 2004.
+	elephant-gallop | Elephant gallop animation, shown at SIGGRAPH 2004.
+
+    With each mesh file triangulated and in .obj format.
+  
+
+  
+3.  Create a meta.properties inside the non-photorealistic-motion-blur/model folder
+    and paste the following information:
+
+      modelLocation = models/horse-gallop/horse-gallop
+      modelName = horse-gallop
+      totalFiles = 48
+
+    This data can be changed but it basically tells the program what data to use when
+    it runs. For example, each time the GUI is ran, the software will load the mesh
+    data from the /horse-gallop/horse-gallop directory, where it will find the 
+    data obj files prefixed with the name horse-gallop, and that the number of files
+    it is expecting to find for the animation is 48.
+
+    Change horse-gallop to what ever other model you want to use, provided it
+    follows this format.
+
+
+
+4.  Running the software:
+
+    Once setup in eclipse, the software should be easily executable. Visit src/main/GUI.java
+    using your eclipse browser and click run. This should bring up the interface with
+    the correct mesh data loaded.
+
+
+For  more information you can contact me at: bugaj.peter@gmail.com
